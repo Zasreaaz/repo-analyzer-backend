@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+.venv/
+
+# Secrets
+.env
+
+# Python cache/bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Packaging/build artifacts
+*.egg-info/
+dist/
+build/
+
+# Editor/OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
