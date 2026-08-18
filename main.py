@@ -5,11 +5,18 @@ load_dotenv()
 
 from fastapi import FastAPI, UploadFile, Form
 from pypdf import PdfReader
+from fastapi.middleware.cors import CORSMiddleware
 
 from agent.loop import run_agent
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/analyze")
 async def analyze(pdf: UploadFile, owner: str = Form(...), repo: str = Form(...)):
